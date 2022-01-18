@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "YouTube Video OCR",
+  "version": "2.0.0",
+
+  "description": "This extension allows you to extract text from YouTube videos.",
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["page.js"],
+      "css": ["style.css"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "permissions": ["https://www.youtube.com/*", "webNavigation", "storage"]
+}
